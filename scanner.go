@@ -76,7 +76,7 @@ type RemoveResult struct {
 // ---------------------------------------------------------------------------
 
 var keywords = []string{
-	"maxhub", "cvte", "uwst",
+	"maxhub", "cvte", "uwst", "andisplay", "bozee",
 }
 
 func containsKeyword(s string) bool {
@@ -354,6 +354,8 @@ func scanAppData(home string, items *[]CleanItem) {
 		desc string
 	}{
 		{filepath.Join(home, "Library", "UWST"), "UWST service and cached applications"},
+		{filepath.Join(home, "Library", "TranscreenNew"), "Transscreen cached data"},
+		{filepath.Join(home, "Library", "AnDisplay"), "AnDisplay launcher and cached data"},
 	}
 	for _, k := range known {
 		if _, err := os.Stat(k.path); err == nil {
